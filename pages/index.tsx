@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Header, Button } from "@/components";
+import { Header, Button, ImageSection } from "@/components";
 
 export default function Home() {
 	return (
@@ -21,6 +21,28 @@ export default function Home() {
 							Get Started
 						</Button>
 					</section>
+
+					<ImageSection
+						backgroundImage="assets/images/image1.png"
+						text="“You have to leave somethig behind to go forward”"
+						movietitle="The Interstellar, 2014"
+					/>
+
+					<ImageSection
+						backgroundImage="assets/images/image2.png"
+						text="I think we’re just gonna have
+                        to be secretly in love with earch other
+                        and leave it that"
+						movietitle="The Royal Tenenbaums, 2001 "
+					/>
+
+					<ImageSection
+						backgroundImage="assets/images/image3.png"
+						text="I think we’re just gonna have
+                        to be secretly in love with earch other
+                        and leave it that"
+						movietitle="The Royal Tenenbaums, 2001 "
+					/>
 				</main>
 			</div>
 		</>
