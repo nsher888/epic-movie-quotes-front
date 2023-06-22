@@ -1,3 +1,4 @@
+import { FormHeader } from "@/components";
 import { FieldError } from "react-hook-form";
 
 export type LoginFormTypes = {
@@ -21,4 +22,9 @@ export type RegistrationFormTypes = {
 	email: string;
 	password: string;
 	confirm_password: string;
+};
+
+export type FormHeaderTypes = {
+	title: string;
+	subtitle: string;
 };
