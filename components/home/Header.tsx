@@ -1,9 +1,14 @@
 import { Button } from "@/components";
 
-const Header = () => {
+interface HeaderProps {
+	onSignUp: () => void;
+	onLogIn: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onSignUp, onLogIn }) => {
 	return (
-		<header className="px-16 pt-6 flex justify-between items-center">
-			<p className="text-orange-200 ">MOVIE QUOTES</p>
+		<header className="flex items-center justify-between px-16 pt-6">
+			<p className="text-orange-200">MOVIE QUOTES</p>
 
 			<div className="flex items-center gap-10">
 				<div className="flex">
@@ -11,8 +16,12 @@ const Header = () => {
 				</div>
 
 				<div className="flex gap-4">
-					<Button className="bg-red-600">Sign Up</Button>
-					<Button className="border border-white">Log In</Button>
+					<Button className="bg-red-600" onClick={onSignUp}>
+						Sign Up
+					</Button>
+					<Button className="border border-white" onClick={onLogIn}>
+						Log In
+					</Button>
 				</div>
 			</div>
 		</header>
