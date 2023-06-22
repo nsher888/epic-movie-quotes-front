@@ -1,3 +1,5 @@
+import { FieldError } from "react-hook-form";
+
 export type LoginFormTypes = {
 	email: string;
 	password: string;
@@ -6,13 +8,12 @@ export type LoginFormTypes = {
 
 export type InputFieldTypes = {
 	label: string;
-	type: string;
 	id: string;
+	name: string;
+	type: string;
 	placeholder: string;
-	errors: {
-		message?: string;
-	};
-	register: (rules?: RegistrationOptions) => void;
+	error?: FieldError;
+	register: any;
 };
 
 export type RegistrationFormTypes = {

@@ -2,10 +2,11 @@ import { InputFieldTypes } from "@/types/FormTypes";
 
 const InputField: React.FC<InputFieldTypes> = ({
 	label,
-	type,
 	id,
+	name,
+	type,
 	placeholder,
-	errors,
+	error,
 	register,
 }) => {
 	return (
@@ -14,16 +15,16 @@ const InputField: React.FC<InputFieldTypes> = ({
 			<input
 				type={type}
 				id={id}
+				name={name}
 				placeholder={placeholder}
 				className={`px-3 py-2 text-gray-600 bg-gray-300 rounded outline-none ${
-					errors ? "border-red-500" : ""
+					error ? "border-red-500 border" : ""
 				}`}
 				{...register}
 			/>
-
-			{errors && (
+			{error && (
 				<p className="absolute text-xs text-red-500 -bottom-6 left-3">
-					{errors.message}
+					{error.message}
 				</p>
 			)}
 		</div>
