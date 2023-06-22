@@ -2,8 +2,14 @@ import { Button } from "@/components/button";
 import useRegistrationForm from "./useRegistrationForm";
 
 const LoginForm = () => {
-	const { register, errors, handleSubmit, onSubmit, getValues } =
-		useRegistrationForm();
+	const {
+		register,
+		errors,
+		handleSubmit,
+		onSubmit,
+		getValues,
+		switchToForm,
+	} = useRegistrationForm();
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -118,7 +124,10 @@ const LoginForm = () => {
 
 			<p className="mt-4 text-center">
 				Already have an account?{" "}
-				<a href="#" className="text-blue-500 underline">
+				<a
+					href="#"
+					className="text-blue-500 underline"
+					onClick={() => switchToForm("login")}>
 					Log In
 				</a>
 			</p>

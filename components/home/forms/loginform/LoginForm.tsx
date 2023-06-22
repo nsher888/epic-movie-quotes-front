@@ -2,7 +2,8 @@ import { Button } from "@/components/button";
 import useLoginForm from "./useLoginForm";
 
 const LoginForm = () => {
-	const { register, errors, handleSubmit, onSubmit } = useLoginForm();
+	const { register, errors, handleSubmit, onSubmit, switchToForm } =
+		useLoginForm();
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -73,7 +74,10 @@ const LoginForm = () => {
 
 			<p className="mt-4 text-center">
 				Do not have an account?{" "}
-				<a href="#" className="text-blue-500 underline">
+				<a
+					href="#"
+					className="text-blue-500 underline"
+					onClick={() => switchToForm("signup")}>
 					Sign Up
 				</a>
 			</p>

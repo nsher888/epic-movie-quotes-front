@@ -1,21 +1,17 @@
 import Head from "next/head";
 import { Header, Button, ImageSection } from "@/components";
 import { Modal, LoginForm, RegistrationForm } from "@/components";
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/stores/store";
+import { useModalActions } from "@/hooks/useModalActions";
 
 export default function Home() {
-	const [isModalVisible, setModalVisible] = useState(false);
-	const [activeForm, setActiveForm] = useState("");
+	const { isModalVisible, activeForm } = useSelector(
+		(state: RootState) => state.modal
+	);
 
-	const openSignUpModal = () => {
-		setModalVisible(true);
-		setActiveForm("signup");
-	};
+	const { openSignUpModal, openLogInModal } = useModalActions();
 
-	const openLogInModal = () => {
-		setModalVisible(true);
-		setActiveForm("login");
-	};
 	return (
 		<>
 			<Head>
