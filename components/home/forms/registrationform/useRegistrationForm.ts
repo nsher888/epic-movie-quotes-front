@@ -12,7 +12,7 @@ const useRegistrationForm = () => {
 	const { errors } = formState;
 
 	const onSubmit = (data: RegistrationFormTypes) => {
-		console.log(data);
+		return data;
 	};
 
 	const dispatch = useDispatch();

@@ -11,7 +11,7 @@ const useLoginForm = () => {
 	const { errors } = formState;
 
 	const onSubmit = (data: LoginFormTypes) => {
-		console.log(data);
+		return data;
 	};
 
 	const dispatch = useDispatch();

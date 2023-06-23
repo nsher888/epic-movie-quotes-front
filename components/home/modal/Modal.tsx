@@ -4,9 +4,7 @@ import useModal from "./useModal";
 const Modal: React.FC<PropsType> = ({ isVisible, children }) => {
 	const { handleOutsideClick } = useModal();
 
-	if (!isVisible) return null;
-
-	return (
+	return isVisible ? (
 		<div
 			className="fixed inset-0 bg-[rgba(0, 0, 0, 0.54)] backdrop-blur-sm flex justify-center items-center text-white z-20"
 			onClick={handleOutsideClick}>
@@ -14,7 +12,7 @@ const Modal: React.FC<PropsType> = ({ isVisible, children }) => {
 				{children}
 			</div>
 		</div>
-	);
+	) : null;
 };
 
 export default Modal;
