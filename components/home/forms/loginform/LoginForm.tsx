@@ -3,8 +3,14 @@ import useLoginForm from "./useLoginForm";
 import { Input } from "postcss";
 
 const LoginForm = () => {
-	const { register, errors, handleSubmit, onSubmit, switchToForm } =
-		useLoginForm();
+	const {
+		register,
+		errors,
+		handleSubmit,
+		onSubmit,
+		switchToForm,
+		backendErrorMessage,
+	} = useLoginForm();
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -15,7 +21,7 @@ const LoginForm = () => {
 			<InputField
 				label="Email"
 				id="email"
-				type="email"
+				type="text"
 				name="email"
 				placeholder="Enter your email"
 				error={errors.email}
@@ -50,6 +56,10 @@ const LoginForm = () => {
 					Forgot password?
 				</a>
 			</div>
+
+			{backendErrorMessage && (
+				<p className="mb-4 text-red-500">{backendErrorMessage}</p>
+			)}
 
 			<Button type="submit" className="w-full mb-4 bg-red-600">
 				Sign In

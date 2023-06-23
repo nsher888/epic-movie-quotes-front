@@ -4,7 +4,6 @@ import { FieldError } from "react-hook-form";
 export type LoginFormTypes = {
 	email: string;
 	password: string;
-	remember_me: string;
 };
 
 export type InputFieldTypes = {
