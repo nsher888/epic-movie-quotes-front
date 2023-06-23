@@ -17,6 +17,7 @@ const useRegistrationForm = () => {
 		try {
 			await getCSRFToken();
 			await registerUser(data);
+			dispatch(showModal("registrationSuccessful"));
 		} catch (error) {
 			console.log(error);
 		}

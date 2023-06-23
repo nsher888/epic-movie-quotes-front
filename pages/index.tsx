@@ -1,5 +1,10 @@
 import Head from "next/head";
-import { Header, Button, ImageSection } from "@/components";
+import {
+	Header,
+	Button,
+	ImageSection,
+	RegistrationSuccessful,
+} from "@/components";
 import { Modal, LoginForm, RegistrationForm } from "@/components";
 import { useSelector } from "react-redux";
 import { RootState } from "@/stores/store";
@@ -59,6 +64,9 @@ export default function Home() {
 			<Modal isVisible={isModalVisible}>
 				{activeForm === "signup" && <RegistrationForm />}
 				{activeForm === "login" && <LoginForm />}
+				{activeForm === "registrationSuccessful" && (
+					<RegistrationSuccessful />
+				)}
 			</Modal>
 		</>
 	);
