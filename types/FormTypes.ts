@@ -33,6 +33,8 @@ export type ForgotPasswordFormTypes = {
 };
 
 export type ResetPasswordFormTypes = {
-	password: string;
-	confirm_password: string;
+	token?: string;
+	email?: string;
+	password?: string;
+	confirm_password?: string;
 };

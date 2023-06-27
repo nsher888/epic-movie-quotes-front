@@ -12,8 +12,11 @@ import { Modal, LoginForm, RegistrationForm } from "@/components";
 import { useSelector } from "react-redux";
 import { RootState } from "@/stores/store";
 import { useModalActions } from "@/hooks/useModalActions";
+import useHome from "@/hooks/useHome";
 
 export default function Home() {
+	useHome();
+
 	const { isModalVisible, activeForm } = useSelector(
 		(state: RootState) => state.modal
 	);
