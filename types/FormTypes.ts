@@ -27,3 +27,7 @@ export type FormHeaderTypes = {
 	title: string;
 	subtitle: string;
 };
+
+export type ForgotPasswordFormTypes = {
+	email: string;
+};

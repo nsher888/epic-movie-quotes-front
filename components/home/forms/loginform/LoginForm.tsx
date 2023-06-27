@@ -64,9 +64,9 @@ const LoginForm = () => {
 			<Button type="submit" className="w-full mb-4 bg-red-600">
 				Sign In
 			</Button>
-			<Button className="w-full border border-white">
-				Sign in with Google{" "}
-			</Button>
+			<a href="http://localhost:8000/auth/google/redirect">
+				Google Log In
+			</a>
 
 			<p className="mt-4 text-center">
 				Do not have an account?{" "}

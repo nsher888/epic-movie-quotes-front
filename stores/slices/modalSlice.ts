@@ -7,7 +7,7 @@ interface ModalState {
 
 const initialState: ModalState = {
 	isModalVisible: false,
-	activeForm: "login",
+	activeForm: "",
 };
 
 const modalSlice = createSlice({

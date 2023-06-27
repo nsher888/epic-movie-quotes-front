@@ -89,7 +89,7 @@ const LoginForm = () => {
 			/>
 
 			<Button type="submit" className="w-full mb-4 bg-red-600">
-				Sign In
+				Sign up
 			</Button>
 			<Button className="w-full border border-white">
 				Sign up with Google{" "}
