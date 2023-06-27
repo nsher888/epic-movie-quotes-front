@@ -7,9 +7,14 @@ const useHome = () => {
 	const router = useRouter();
 	const dispatch = useDispatch();
 	useEffect(() => {
-		const { email, token } = router.query;
+		const { email, token, verify } = router.query;
 		if (email && token) {
 			dispatch(showModal("resetPassword"));
+		}
+
+		if (verify) {
+			router.replace("/");
+			dispatch(showModal("ChangeSuccessfull"));
 		}
 	}, [dispatch, router, router.query]);
 };
