@@ -31,3 +31,8 @@ export type FormHeaderTypes = {
 export type ForgotPasswordFormTypes = {
 	email: string;
 };
+
+export type ResetPasswordFormTypes = {
+	password: string;
+	confirm_password: string;
+};

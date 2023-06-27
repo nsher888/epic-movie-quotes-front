@@ -3,7 +3,10 @@ import {
 	Header,
 	Button,
 	ImageSection,
-	RegistrationSuccessful,
+	EmailSuccessful,
+	ForgotPassword,
+	ResetPassword,
+	ChangeSuccessful,
 } from "@/components";
 import { Modal, LoginForm, RegistrationForm } from "@/components";
 import { useSelector } from "react-redux";
@@ -64,9 +67,10 @@ export default function Home() {
 			<Modal isVisible={isModalVisible}>
 				{activeForm === "signup" && <RegistrationForm />}
 				{activeForm === "login" && <LoginForm />}
-				{activeForm === "registrationSuccessful" && (
-					<RegistrationSuccessful />
-				)}
+				{activeForm === "EmailSuccessfull" && <EmailSuccessful />}
+				{activeForm === "forgotPassword" && <ForgotPassword />}
+				{activeForm === "resetPassword" && <ResetPassword />}
+				{activeForm === "ChangeSuccessfull" && <ChangeSuccessful />}
 			</Modal>
 		</>
 	);

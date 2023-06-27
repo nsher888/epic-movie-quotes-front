@@ -52,7 +52,9 @@ const LoginForm = () => {
 					<label htmlFor="remember">Remember me</label>
 				</div>
 
-				<a href="#" className="text-blue-500 underline">
+				<a
+					className="text-blue-500 underline cursor-pointer"
+					onClick={() => switchToForm("forgotPassword")}>
 					Forgot password?
 				</a>
 			</div>

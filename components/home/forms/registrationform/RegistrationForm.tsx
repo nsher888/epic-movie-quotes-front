@@ -62,7 +62,7 @@ const LoginForm = () => {
 				id="password"
 				name="password"
 				type="password"
-				placeholder="At least 3 & max. 15 lowercase characters"
+				placeholder="At least 8 & max. 15 lowercase characters"
 				error={errors.password}
 				register={register("password", {
 					required: "Please provide a valid value.",
@@ -70,6 +70,14 @@ const LoginForm = () => {
 						value: /^[a-z0-9]+$/,
 						message:
 							"Please use only lowercase Latin letters and numbers.",
+					},
+					minLength: {
+						value: 8,
+						message: "Minimum 8 characters required",
+					},
+					maxLength: {
+						value: 15,
+						message: "Maximum 15 characters allowed",
 					},
 				})}
 			/>

@@ -1,4 +1,4 @@
-const useRegistrationSuccessful = () => {
+const useEmailSuccessful = () => {
 	const openGmail = () => {
 		window.open("https://mail.google.com/mail/u/0/#inbox", "_blank");
 	};
@@ -8,4 +8,4 @@ const useRegistrationSuccessful = () => {
 	};
 };
 
-export default useRegistrationSuccessful;
+export default useEmailSuccessful;
