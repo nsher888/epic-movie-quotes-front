@@ -7,8 +7,10 @@ import {
 	ForgotPassword,
 	ResetPassword,
 	ChangeSuccessful,
+	Modal,
+	LoginForm,
+	RegistrationForm,
 } from "@/components";
-import { Modal, LoginForm, RegistrationForm } from "@/components";
 import { useSelector } from "react-redux";
 import { RootState } from "@/stores/store";
 import { useModalActions } from "@/hooks/useModalActions";

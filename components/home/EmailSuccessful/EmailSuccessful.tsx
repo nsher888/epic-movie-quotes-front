@@ -1,5 +1,4 @@
-import { Button } from "@/components";
-import EmailSent from "@/components/icons/EmailSent";
+import { Button, EmailSent } from "@/components";
 import useRegistrationSuccessful from "./useRegistrationSuccessful";
 
 const EmailSuccessfull = () => {

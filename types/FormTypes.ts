@@ -1,4 +1,3 @@
-import { FormHeader } from "@/components";
 import { FieldError } from "react-hook-form";
 
 export type LoginFormTypes = {

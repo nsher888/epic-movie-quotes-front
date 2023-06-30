@@ -1,7 +1,5 @@
-import { Button } from "@/components/button";
-import { FormHeader, InputField } from "../shared";
+import { Button, BackArrow, FormHeader, InputField } from "@/components";
 import useResetPassword from "./useResetPassword";
-import { BackArrow } from "@/components";
 
 const ResetPassword = () => {
 	const { register, errors, handleSubmit, onSubmit, getValues } =

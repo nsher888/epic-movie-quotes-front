@@ -1,7 +1,5 @@
-import { Button } from "@/components/button";
-import { FormHeader, InputField } from "../shared";
 import useForgotPassword from "./useForgotPassword";
-import { BackArrow } from "@/components";
+import { BackArrow, FormHeader, InputField, Button } from "@/components";
 
 const ForgotPassword = () => {
 	const { register, errors, handleSubmit, onSubmit } = useForgotPassword();
