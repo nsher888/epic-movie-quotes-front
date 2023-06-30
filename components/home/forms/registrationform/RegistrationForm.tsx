@@ -99,9 +99,9 @@ const LoginForm = () => {
 			<Button type="submit" className="w-full mb-4 bg-red-600">
 				Sign up
 			</Button>
-			<Button className="w-full border border-white">
-				Sign up with Google{" "}
-			</Button>
+			<a href="http://localhost:8000/api/auth/google/redirect">
+				Sign up with Google
+			</a>
 
 			<p className="mt-4 text-center">
 				Already have an account?{" "}

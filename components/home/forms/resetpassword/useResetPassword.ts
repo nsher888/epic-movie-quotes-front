@@ -33,11 +33,10 @@ const useResetPassword = () => {
 			data["token"] = token;
 			data["email"] = email;
 			await getCSRFToken();
-			console.log(data);
 			await resetPassword(data);
 			dispath(showModal("ChangeSuccessfull"));
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 

@@ -16,12 +16,11 @@ const useForgotPassword = () => {
 
 	const onSubmit: SubmitHandler<ForgotPasswordFormTypes> = async (data) => {
 		try {
-			console.log(data);
 			await getCSRFToken();
 			await forgotPassword(data);
 			dispath(showModal("EmailSuccessfull"));
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 

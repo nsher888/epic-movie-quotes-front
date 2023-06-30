@@ -65,7 +65,7 @@ const LoginForm = () => {
 			<Button type="submit" className="w-full mb-4 bg-red-600">
 				Sign In
 			</Button>
-			<a href="http://localhost:8000/auth/google/redirect">
+			<a href="http://localhost:8000/api/auth/google/redirect">
 				Google Log In
 			</a>
 

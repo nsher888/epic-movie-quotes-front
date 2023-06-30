@@ -19,7 +19,7 @@ const useRegistrationForm = () => {
 			await registerUser(data);
 			dispatch(showModal("EmailSuccessfull"));
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 
