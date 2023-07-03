@@ -1,11 +1,24 @@
 import Head from "next/head";
-import { Header, Button, ImageSection } from "@/components";
-import { Modal, LoginForm, RegistrationForm } from "@/components";
+import {
+	Header,
+	Button,
+	ImageSection,
+	EmailSuccessful,
+	ForgotPassword,
+	ResetPassword,
+	ChangeSuccessful,
+	Modal,
+	LoginForm,
+	RegistrationForm,
+} from "@/components";
 import { useSelector } from "react-redux";
 import { RootState } from "@/stores/store";
 import { useModalActions } from "@/hooks/useModalActions";
+import useHome from "@/hooks/useHome";
 
 export default function Home() {
+	useHome();
+
 	const { isModalVisible, activeForm } = useSelector(
 		(state: RootState) => state.modal
 	);
@@ -59,6 +72,10 @@ export default function Home() {
 			<Modal isVisible={isModalVisible}>
 				{activeForm === "signup" && <RegistrationForm />}
 				{activeForm === "login" && <LoginForm />}
+				{activeForm === "EmailSuccessfull" && <EmailSuccessful />}
+				{activeForm === "forgotPassword" && <ForgotPassword />}
+				{activeForm === "resetPassword" && <ResetPassword />}
+				{activeForm === "ChangeSuccessfull" && <ChangeSuccessful />}
 			</Modal>
 		</>
 	);

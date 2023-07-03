@@ -62,7 +62,7 @@ const LoginForm = () => {
 				id="password"
 				name="password"
 				type="password"
-				placeholder="At least 3 & max. 15 lowercase characters"
+				placeholder="At least 8 & max. 15 lowercase characters"
 				error={errors.password}
 				register={register("password", {
 					required: "Please provide a valid value.",
@@ -70,6 +70,14 @@ const LoginForm = () => {
 						value: /^[a-z0-9]+$/,
 						message:
 							"Please use only lowercase Latin letters and numbers.",
+					},
+					minLength: {
+						value: 8,
+						message: "Minimum 8 characters required",
+					},
+					maxLength: {
+						value: 15,
+						message: "Maximum 15 characters allowed",
 					},
 				})}
 			/>
@@ -89,11 +97,11 @@ const LoginForm = () => {
 			/>
 
 			<Button type="submit" className="w-full mb-4 bg-red-600">
-				Sign In
+				Sign up
 			</Button>
-			<Button className="w-full border border-white">
-				Sign up with Google{" "}
-			</Button>
+			<a href="http://localhost:8000/api/auth/google/redirect">
+				Sign up with Google
+			</a>
 
 			<p className="mt-4 text-center">
 				Already have an account?{" "}

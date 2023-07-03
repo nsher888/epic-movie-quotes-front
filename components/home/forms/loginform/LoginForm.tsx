@@ -1,10 +1,15 @@
 import { Button, InputField, FormHeader } from "@/components";
 import useLoginForm from "./useLoginForm";
-import { Input } from "postcss";
 
 const LoginForm = () => {
-	const { register, errors, handleSubmit, onSubmit, switchToForm } =
-		useLoginForm();
+	const {
+		register,
+		errors,
+		handleSubmit,
+		onSubmit,
+		switchToForm,
+		backendErrorMessage,
+	} = useLoginForm();
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
@@ -15,7 +20,7 @@ const LoginForm = () => {
 			<InputField
 				label="Email"
 				id="email"
-				type="email"
+				type="text"
 				name="email"
 				placeholder="Enter your email"
 				error={errors.email}
@@ -46,17 +51,23 @@ const LoginForm = () => {
 					<label htmlFor="remember">Remember me</label>
 				</div>
 
-				<a href="#" className="text-blue-500 underline">
+				<a
+					className="text-blue-500 underline cursor-pointer"
+					onClick={() => switchToForm("forgotPassword")}>
 					Forgot password?
 				</a>
 			</div>
 
+			{backendErrorMessage && (
+				<p className="mb-4 text-red-500">{backendErrorMessage}</p>
+			)}
+
 			<Button type="submit" className="w-full mb-4 bg-red-600">
 				Sign In
 			</Button>
-			<Button className="w-full border border-white">
-				Sign in with Google{" "}
-			</Button>
+			<a href="http://localhost:8000/api/auth/google/redirect">
+				Google Log In
+			</a>
 
 			<p className="mt-4 text-center">
 				Do not have an account?{" "}

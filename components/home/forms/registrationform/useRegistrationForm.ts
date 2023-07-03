@@ -1,7 +1,9 @@
 import { RegistrationFormTypes } from "@/types/FormTypes";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { showModal } from "@/stores/slices/modalSlice";
+import { registerUser } from "@/services/session/registerUser";
+import { getCSRFToken } from "@/services/session/getCSRFToken";
 
 const useRegistrationForm = () => {
 	const { register, formState, handleSubmit, getValues } =
@@ -11,8 +13,14 @@ const useRegistrationForm = () => {
 
 	const { errors } = formState;
 
-	const onSubmit = (data: RegistrationFormTypes) => {
-		return data;
+	const onSubmit: SubmitHandler<RegistrationFormTypes> = async (data) => {
+		try {
+			await getCSRFToken();
+			await registerUser(data);
+			dispatch(showModal("EmailSuccessfull"));
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	const dispatch = useDispatch();
