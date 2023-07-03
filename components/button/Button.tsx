@@ -1,8 +1,18 @@
 import { ButtonProps } from "@/types";
 
-const Button = ({ children, className, ...props }: ButtonProps) => {
+const Button = ({
+	children,
+	className,
+	type,
+	onClick,
+	...props
+}: ButtonProps) => {
 	return (
-		<button className={`px-7 py-2 rounded ${className}`} {...props}>
+		<button
+			className={`px-7 py-2 rounded ${className}`}
+			onClick={onClick}
+			type={type}
+			{...props}>
 			{children}
 		</button>
 	);

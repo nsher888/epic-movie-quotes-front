@@ -1,23 +1,33 @@
 import Head from "next/head";
 import { Header, Button, ImageSection } from "@/components";
+import { Modal, LoginForm, RegistrationForm } from "@/components";
+import { useSelector } from "react-redux";
+import { RootState } from "@/stores/store";
+import { useModalActions } from "@/hooks/useModalActions";
 
 export default function Home() {
+	const { isModalVisible, activeForm } = useSelector(
+		(state: RootState) => state.modal
+	);
+
+	const { openSignUpModal, openLogInModal } = useModalActions();
+
 	return (
 		<>
 			<Head>
 				<title>Epic Movies</title>
 			</Head>
 
-			<div className="bg-black text-white">
-				<Header />
+			<div className="text-white bg-black">
+				<Header onSignUp={openSignUpModal} onLogIn={openLogInModal} />
 
 				<main>
-					<section className="min-h-screen flex flex-col items-center justify-center gap-6">
-						<h1 className="text-orange-200  text-6xl text-center  leading-normal">
+					<section className="flex flex-col items-center justify-center min-h-screen gap-6">
+						<h1 className="text-6xl leading-normal text-center text-orange-200">
 							Find any quote in <br />
 							millions of movie lines
 						</h1>
-						<Button className="bg-red-600 inline-block">
+						<Button className="inline-block bg-red-600">
 							Get Started
 						</Button>
 					</section>
@@ -45,6 +55,11 @@ export default function Home() {
 					/>
 				</main>
 			</div>
+
+			<Modal isVisible={isModalVisible}>
+				{activeForm === "signup" && <RegistrationForm />}
+				{activeForm === "login" && <LoginForm />}
+			</Modal>
 		</>
 	);
 }
