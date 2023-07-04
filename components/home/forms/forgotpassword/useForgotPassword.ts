@@ -3,6 +3,7 @@ import { forgotPassword } from "@/services/session/passwordReset";
 import { showModal } from "@/stores/slices/modalSlice";
 import { ForgotPasswordFormTypes } from "@/types/FormTypes";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useTranslation } from "next-i18next";
 import { useDispatch } from "react-redux";
 
 const useForgotPassword = () => {
@@ -24,11 +25,14 @@ const useForgotPassword = () => {
 		}
 	};
 
+	const { t } = useTranslation("landing");
+
 	return {
 		register,
 		errors,
 		handleSubmit,
 		onSubmit,
+		t,
 	};
 };
 

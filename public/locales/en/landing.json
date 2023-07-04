@@ -1,0 +1,22 @@
+{
+	"signUp": "Sign Up",
+	"logIn": "Log In",
+	"createAnAccount": "Create an Account",
+	"startYourJourney": "Start your journey",
+	"name": "Name",
+	"email": "Email",
+	"password": "Password",
+	"confirmPassword": "Confirm Password",
+	"signUpWithGoogle": "Sign Up with Google",
+	"alreadyHaveAnAccount": "Already have an account?",
+	"rememberMe": "Remember me",
+	"forgotPassword": "Forgot Password?",
+	"doNotHaveAnAccount": "Don't have an account?",
+	"forgotPasswordText": "Enter the email and we’ll send an email with instructions to reset your password",
+	"backToLogin": "Back to Login",
+	"sendInsturctions": "Send Instructions",
+	"logInText": "Log In to your account",
+	"loginInSubtitle": "Welcome back! Please, Enter your Details",
+	"enterEmail": "Enter your Email",
+	"enterPassword": "Enter your Password"
+}

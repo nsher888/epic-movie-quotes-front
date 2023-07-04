@@ -2,16 +2,15 @@ import useForgotPassword from "./useForgotPassword";
 import { BackArrow, FormHeader, InputField, Button } from "@/components";
 
 const ForgotPassword = () => {
-	const { register, errors, handleSubmit, onSubmit } = useForgotPassword();
+	const { register, errors, handleSubmit, onSubmit, t } = useForgotPassword();
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className="max-w-sm">
 			<FormHeader
-				title="Forgot password?"
-				subtitle="Enter the email and we’ll send an email with
-                instructions to reset your password"
+				title={t("forgotPassword")}
+				subtitle={t("forgotPasswordText")}
 			/>
 			<InputField
-				label="Email"
+				label={t("email")}
 				id="email"
 				name="email"
 				type="text"
@@ -27,12 +26,12 @@ const ForgotPassword = () => {
 			/>
 
 			<Button type="submit" className="w-full mb-4 bg-red-600">
-				Send instructions
+				{t("sendInsturctions")}
 			</Button>
 
 			<div className="flex items-center justify-center gap-5 mt-8">
 				<BackArrow />
-				<p className="text-gray-500">Back to log in</p>
+				<p className="text-gray-500">{t("backToLogin")}</p>
 			</div>
 		</form>
 	);

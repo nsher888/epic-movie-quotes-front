@@ -6,13 +6,9 @@ const LanguageSwitcher = () => {
 	const router = useRouter();
 	const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
-	const changeLanguage = (language) => {
+	const changeLanguage = (language: any) => {
 		setIsDropdownVisible(false);
 		router.push(router.pathname, router.asPath, { locale: language });
-	};
-
-	const getOtherLocale = () => {
-		return router.locale === "en" ? "ka" : "en";
 	};
 
 	return (

@@ -9,20 +9,21 @@ const LoginForm = () => {
 		onSubmit,
 		switchToForm,
 		backendErrorMessage,
+		t,
 	} = useLoginForm();
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form onSubmit={handleSubmit(onSubmit)} className="max-w-xs">
 			<FormHeader
-				title="Log In to your account"
-				subtitle="Welcome back! Please, Enter your Details"
+				title={t("logInText")}
+				subtitle={t("loginInSubtitle")}
 			/>
 			<InputField
-				label="Email"
+				label={t("email")}
 				id="email"
 				type="text"
 				name="email"
-				placeholder="Enter your email"
+				placeholder={t("enterEmail")}
 				error={errors.email}
 				register={register("email", {
 					minLength: {
@@ -34,11 +35,11 @@ const LoginForm = () => {
 			/>
 
 			<InputField
-				label="Password"
+				label={t("password")}
 				id="password"
 				type="password"
 				name="password"
-				placeholder="Enter your password"
+				placeholder={t("enterPassword")}
 				error={errors.password}
 				register={register("password", {
 					required: "Please provide a valid value.",
@@ -48,13 +49,13 @@ const LoginForm = () => {
 			<div className="flex justify-between mb-4">
 				<div className="flex items-center gap-2">
 					<input type="checkbox" name="remember" id="remember" />
-					<label htmlFor="remember">Remember me</label>
+					<label htmlFor="remember">{t("rememberMe")}</label>
 				</div>
 
 				<a
 					className="text-blue-500 underline cursor-pointer"
 					onClick={() => switchToForm("forgotPassword")}>
-					Forgot password?
+					{t("forgotPassword")}
 				</a>
 			</div>
 
@@ -63,18 +64,18 @@ const LoginForm = () => {
 			)}
 
 			<Button type="submit" className="w-full mb-4 bg-red-600">
-				Sign In
+				{t("logIn")}
 			</Button>
 			<a href="http://localhost:8000/api/auth/google/redirect">
-				Google Log In
+				{t("signUpWithGoogle")}
 			</a>
 
 			<p className="mt-4 text-center">
-				Do not have an account?{" "}
+				{t("doNotHaveAnAccount")} &nbsp;
 				<a
 					className="text-blue-500 underline cursor-pointer"
 					onClick={() => switchToForm("signup")}>
-					Sign Up
+					{t("signUp")}
 				</a>
 			</p>
 		</form>

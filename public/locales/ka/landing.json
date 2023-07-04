@@ -1,0 +1,22 @@
+{
+	"signUp": "რეგისტრაცია",
+	"logIn": "შესვლა",
+	"createAnAccount": "ანგარიშის შექმნა",
+	"startYourJourney": "დაიწყე შენი თავგადასავალი",
+	"name": "სახელი",
+	"email": "იმეილი",
+	"password": "პაროლი",
+	"confirmPassword": "დაადასტურე პაროლი",
+	"signUpWithGoogle": "Google-ით ავტორიზაცია",
+	"alreadyHaveAnAccount": "უკვე გაქვს ანგარიში?",
+	"rememberMe": "დამიმახსოვრე",
+	"forgotPassword": "დაგავიწყდა პაროლი?",
+	"doNotHaveAnAccount": "არ გაქვს ანგარიში?",
+	"forgotPasswordText": "შეიყვანე იმეილი და ჩვენ გამოგიგზავნით ინსტრუქციებს",
+	"backToLogin": "ავტორიზაციაზე დაბრუნება",
+	"sendInsturctions": "ინსტრუქციების გაგზავნა",
+	"logInText": "ანგარიშში შესვლა",
+	"loginInSubtitle": "კეთილი იყოს შენი უკან დაბრუნება! შეიყვანე ანგარიშის მონაცემები",
+	"enterEmail": "შეიყვანე იმეილი",
+	"enterPassword": "შეიყვანე პაროლი"
+}

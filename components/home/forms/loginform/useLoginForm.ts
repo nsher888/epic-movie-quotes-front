@@ -12,6 +12,7 @@ import { useState } from "react";
 import useAuth from "@/hooks/useAuth";
 import { useRouter } from "next/router";
 import { env } from "process";
+import { useTranslation } from "next-i18next";
 
 const useLoginForm = () => {
 	const { register, formState, handleSubmit } = useForm<LoginFormTypes>({
@@ -41,6 +42,8 @@ const useLoginForm = () => {
 		dispatch(showModal(formName));
 	};
 
+	const { t } = useTranslation("landing");
+
 	return {
 		register,
 		errors,
@@ -48,6 +51,7 @@ const useLoginForm = () => {
 		onSubmit,
 		switchToForm,
 		backendErrorMessage,
+		t,
 	};
 };
 
