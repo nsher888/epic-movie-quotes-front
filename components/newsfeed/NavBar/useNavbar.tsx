@@ -2,6 +2,7 @@ import useAuth from "@/hooks/useAuth";
 import { logOutUser } from "@/services/session/logOutUser";
 import { hideModal } from "@/stores/slices/modalSlice";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import { useDispatch } from "react-redux";
 
 const useNavbar = () => {
@@ -20,8 +21,11 @@ const useNavbar = () => {
 		}
 	};
 
+	const { t } = useTranslation("newsfeed");
+
 	return {
 		handleLogout,
+		t,
 	};
 };
 
