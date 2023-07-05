@@ -4,7 +4,9 @@ import Link from "next/link";
 import useSideBar from "./useSideBar";
 
 const SideBar = () => {
-	const { isNewsfeedPage, isListPage, isProfilePage, t } = useSideBar();
+	const { isNewsfeedPage, isListPage, isProfilePage, t, user } = useSideBar();
+
+	console.log(user);
 
 	return (
 		<ul className="pt-8 pl-20 text-white">
@@ -19,7 +21,7 @@ const SideBar = () => {
 					}`}
 				/>
 				<div className="flex flex-col gap-2">
-					<p className="text-2xl ">Nino Tabagari</p>
+					<p className="text-2xl">{user.name}</p>
 					<Link href="/profile">{t("editProfile")}</Link>
 				</div>
 			</li>
