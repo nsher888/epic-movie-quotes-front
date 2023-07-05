@@ -1,15 +1,9 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
 import { DownArrow } from "@/components";
+import useLanguageSwitcher from "./useLanguageSwitcher";
 
 const LanguageSwitcher = () => {
-	const router = useRouter();
-	const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-
-	const changeLanguage = (language: any) => {
-		setIsDropdownVisible(false);
-		router.push(router.pathname, router.asPath, { locale: language });
-	};
+	const { isDropdownVisible, setIsDropdownVisible, changeLanguage, router } =
+		useLanguageSwitcher();
 
 	return (
 		<div className="relative inline-block">
