@@ -26,7 +26,7 @@ const useResetPassword = () => {
 		setEmail(email as string);
 		setToken(token as string);
 		router.replace("/");
-	}, []);
+	}, [router]);
 
 	const onSubmit = async (data: ResetPasswordFormTypes) => {
 		try {

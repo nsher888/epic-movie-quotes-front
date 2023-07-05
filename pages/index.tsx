@@ -15,9 +15,13 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/stores/store";
 import { useModalActions } from "@/hooks/useModalActions";
 import useHome from "@/hooks/useHome";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
 	useHome();
+
+	const { t } = useTranslation();
 
 	const { isModalVisible, activeForm } = useSelector(
 		(state: RootState) => state.modal
@@ -41,7 +45,7 @@ export default function Home() {
 							millions of movie lines
 						</h1>
 						<Button className="inline-block bg-red-600">
-							Get Started
+							{t("getStarted")}
 						</Button>
 					</section>
 
@@ -79,4 +83,12 @@ export default function Home() {
 			</Modal>
 		</>
 	);
+}
+
+export async function getStaticProps({ locale }: any) {
+	return {
+		props: {
+			...(await serverSideTranslations(locale, ["common", "landing"])),
+		},
+	};
 }

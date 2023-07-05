@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { showModal } from "@/stores/slices/modalSlice";
 import { registerUser } from "@/services/session/registerUser";
 import { getCSRFToken } from "@/services/session/getCSRFToken";
+import { useTranslation } from "next-i18next";
 
 const useRegistrationForm = () => {
 	const { register, formState, handleSubmit, getValues } =
@@ -29,6 +30,8 @@ const useRegistrationForm = () => {
 		dispatch(showModal(formName));
 	};
 
+	const { t } = useTranslation("landing");
+
 	return {
 		register,
 		errors,
@@ -36,6 +39,7 @@ const useRegistrationForm = () => {
 		onSubmit,
 		getValues,
 		switchToForm,
+		t,
 	};
 };
 

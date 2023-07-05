@@ -1,4 +1,5 @@
-import { Button } from "@/components";
+import { Button, LanguageSwitcher } from "@/components";
+import { useTranslation } from "next-i18next";
 
 interface HeaderProps {
 	onSignUp: () => void;
@@ -6,21 +7,20 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onSignUp, onLogIn }) => {
+	const { t } = useTranslation("landing");
 	return (
 		<header className="flex items-center justify-between px-16 pt-6">
 			<p className="text-orange-200">MOVIE QUOTES</p>
 
 			<div className="flex items-center gap-10">
-				<div className="flex">
-					<p>Eng</p>
-				</div>
+				<LanguageSwitcher />
 
 				<div className="flex gap-4">
 					<Button className="bg-red-600" onClick={onSignUp}>
-						Sign Up
+						{t("signUp")}
 					</Button>
 					<Button className="border border-white" onClick={onLogIn}>
-						Log In
+						{t("logIn")}
 					</Button>
 				</div>
 			</div>

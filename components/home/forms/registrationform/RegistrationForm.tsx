@@ -9,17 +9,18 @@ const LoginForm = () => {
 		onSubmit,
 		getValues,
 		switchToForm,
+		t,
 	} = useRegistrationForm();
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<FormHeader
-				title="Create an account"
-				subtitle="Start your journey!"
+				title={t("createAnAccount")}
+				subtitle={t("startYourJourney")}
 			/>
 
 			<InputField
-				label="Name"
+				label={t("name")}
 				id="name"
 				name="name"
 				type="text"
@@ -43,7 +44,7 @@ const LoginForm = () => {
 				})}
 			/>
 			<InputField
-				label="Email"
+				label={t("email")}
 				id="email"
 				name="email"
 				type="text"
@@ -58,7 +59,7 @@ const LoginForm = () => {
 				})}
 			/>
 			<InputField
-				label="Password"
+				label={t("password")}
 				id="password"
 				name="password"
 				type="password"
@@ -82,7 +83,7 @@ const LoginForm = () => {
 				})}
 			/>
 			<InputField
-				label="Confirm Password"
+				label={t("confirmPassword")}
 				id="confirm_password"
 				name="confirm_password"
 				type="password"
@@ -97,18 +98,18 @@ const LoginForm = () => {
 			/>
 
 			<Button type="submit" className="w-full mb-4 bg-red-600">
-				Sign up
+				{t("signUp")}
 			</Button>
 			<a href="http://localhost:8000/api/auth/google/redirect">
-				Sign up with Google
+				{t("signUpWithGoogle")}
 			</a>
 
 			<p className="mt-4 text-center">
-				Already have an account?{" "}
+				{t("alreadyHaveAnAccount")}{" "}
 				<a
 					className="text-blue-500 underline cursor-pointer"
 					onClick={() => switchToForm("login")}>
-					Log In
+					{t("logIn")}
 				</a>
 			</p>
 		</form>
