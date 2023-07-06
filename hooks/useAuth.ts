@@ -1,6 +1,5 @@
-import { getUserData } from "@/services/profile/getUserData";
-import { setUser } from "@/stores/slices/userSlice";
-import User from "@/types/UserType";
+import { getUserData } from "@/services";
+import { setUser } from "@/stores";
 import { deleteCookie, setCookie } from "cookies-next";
 import { useDispatch } from "react-redux";
 
