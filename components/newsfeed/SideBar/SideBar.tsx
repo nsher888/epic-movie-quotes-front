@@ -9,7 +9,7 @@ const SideBar = () => {
 	console.log(user);
 
 	return (
-		<ul className="pt-8 pl-20 text-white">
+		<ul className="pt-8 pl-20 text-white mr-44">
 			<li className="flex mb-10">
 				<Image
 					src="/assets/images/avatar.jpeg"

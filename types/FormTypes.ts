@@ -6,13 +6,15 @@ export type LoginFormTypes = {
 };
 
 export type InputFieldTypes = {
-	label: string;
-	id: string;
-	name: string;
-	type: string;
-	placeholder: string;
+	label?: string;
+	id?: string;
+	name?: string;
+	type?: string;
+	placeholder?: string;
 	error?: FieldError;
-	register: any;
+	register?: any;
+	readOnly?: boolean | string;
+	value?: string;
 };
 
 export type RegistrationFormTypes = {

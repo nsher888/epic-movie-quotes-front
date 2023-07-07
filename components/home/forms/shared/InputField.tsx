@@ -8,6 +8,7 @@ const InputField: React.FC<InputFieldTypes> = ({
 	placeholder,
 	error,
 	register,
+	readOnly,
 }) => {
 	return (
 		<div className="relative flex flex-col gap-2 mb-8">
@@ -15,6 +16,7 @@ const InputField: React.FC<InputFieldTypes> = ({
 			<input
 				type={type}
 				id={id}
+				readonly={readOnly}
 				name={name}
 				placeholder={placeholder}
 				className={`px-3 py-2 text-gray-600 bg-gray-300 rounded outline-none ${
