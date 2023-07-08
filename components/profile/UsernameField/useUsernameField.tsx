@@ -1,4 +1,4 @@
-import UserContext from "@/context/UserContext";
+import { UserContext } from "@/context";
 import { RootState } from "@/stores/store";
 import { useContext } from "react";
 import { useSelector } from "react-redux";

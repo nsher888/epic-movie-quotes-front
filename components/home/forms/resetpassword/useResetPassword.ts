@@ -1,12 +1,10 @@
-import { getCSRFToken } from "@/services/session/getCSRFToken";
-import { showModal } from "@/stores/slices/modalSlice";
+import { getCSRFToken, resetPassword } from "@/services";
+import { showModal } from "@/stores";
 import { ResetPasswordFormTypes } from "@/types/FormTypes";
 import { Router, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import ResetPassword from "./ResetPassword";
-import { resetPassword } from "@/services/session/passwordReset";
 
 const useResetPassword = () => {
 	const { register, formState, handleSubmit, getValues } =

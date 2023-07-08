@@ -1,17 +1,11 @@
-import {
-	googleLogin,
-	googleLoginCallback,
-} from "./../../../../services/session/googleLogin";
 import { LoginFormTypes } from "@/types/FormTypes";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { showModal } from "@/stores/slices/modalSlice";
-import { getCSRFToken } from "@/services/session/getCSRFToken";
-import { logInUser } from "@/services/session/logInUser";
+import { showModal } from "@/stores";
+import { getCSRFToken, logInUser } from "@/services";
 import { useState } from "react";
 import useAuth from "@/hooks/useAuth";
 import { useRouter } from "next/router";
-import { env } from "process";
 import { useTranslation } from "next-i18next";
 
 const useLoginForm = () => {

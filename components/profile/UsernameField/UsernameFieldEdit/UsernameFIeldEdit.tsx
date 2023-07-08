@@ -6,7 +6,7 @@ const UsernameFieldEdit = () => {
 		useUsernameFieldEdit();
 
 	return (
-		<div className="max-w-[546px] ">
+		<div className="max-w-[546px]">
 			<InputField
 				label="New username"
 				id="name"

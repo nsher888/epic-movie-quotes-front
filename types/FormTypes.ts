@@ -44,3 +44,8 @@ export type ResetPasswordFormTypes = {
 export type UsernameEditFormTypes = {
 	name: string;
 };
+
+export type PasswordEditFormTypes = {
+	password: string;
+	confirm_password: string;
+};

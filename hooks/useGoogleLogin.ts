@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { googleLoginCallback } from "@/services/session/googleLogin";
-import { getCSRFToken } from "@/services/session/getCSRFToken";
+import { googleLoginCallback, getCSRFToken } from "@/services";
 import { setCookie } from "cookies-next";
 import { useDispatch } from "react-redux";
-import { getUserData } from "@/services/profile/getUserData";
-import { setUser } from "@/stores/slices/userSlice";
+import { getUserData } from "@/services";
+import { setUser } from "@/stores";
 
 const useGoogleLogin = () => {
 	const router = useRouter();
