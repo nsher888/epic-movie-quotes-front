@@ -1,12 +1,43 @@
-import { InputField } from "@/components";
+import { EditInputField, InputField, PasswordIcon } from "@/components";
 import usePasswordFieldEdit from "./usePasswordFieldEdit";
 
 const PasswordFieldEdit = () => {
-	const { register, errors, getValues, handleNewPasswordChange } =
-		usePasswordFieldEdit();
+	const {
+		register,
+		errors,
+		getValues,
+		handleNewPasswordChange,
+		isLengthValid,
+		isLowercaseValid,
+	} = usePasswordFieldEdit();
 	return (
 		<div className="max-w-[546px]">
-			<InputField
+			<div className="p-6 mb-8 border border-gray-500 rounded">
+				<p>Password Should Contain</p>
+				<div className="flex items-center gap-2 mt-4 mb-1 text-sm">
+					<PasswordIcon
+						color={isLengthValid ? "#198754" : "#9C9A9A"}
+					/>
+					<p
+						className={
+							isLengthValid ? "text-white" : "text-neutral-400"
+						}>
+						8 or more characters
+					</p>
+				</div>
+				<div className="flex items-center gap-2 text-sm">
+					<PasswordIcon
+						color={isLowercaseValid ? "#198754" : "#9C9A9A"}
+					/>
+					<p
+						className={
+							isLowercaseValid ? "text-white" : "text-neutral-400"
+						}>
+						15 lowercase characters
+					</p>
+				</div>
+			</div>
+			<EditInputField
 				label="New password"
 				id="password"
 				name="password"

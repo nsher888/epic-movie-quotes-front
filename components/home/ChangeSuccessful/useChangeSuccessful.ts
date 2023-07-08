@@ -1,4 +1,4 @@
-import { showModal } from "@/stores/slices/modalSlice";
+import { showModal } from "@/stores";
 import { useDispatch } from "react-redux";
 
 const useChangeSuccessful = () => {

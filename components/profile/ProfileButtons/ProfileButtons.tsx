@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@/components";
 import { RootState } from "@/stores/store";
 import { getUserData, updatePassword, updateUsername } from "@/services";
-import { setUser } from "@/stores/slices/userSlice";
+import { setUser } from "@/stores";
 import { useContext } from "react";
 import { UserContext } from "@/context";
 

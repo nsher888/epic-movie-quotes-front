@@ -1,4 +1,4 @@
-import { InputField } from "@/components";
+import { EditInputField } from "@/components";
 import useUsernameFieldEdit from "./useUsernameFieldEdit";
 
 const UsernameFieldEdit = () => {
@@ -7,7 +7,7 @@ const UsernameFieldEdit = () => {
 
 	return (
 		<div className="max-w-[546px]">
-			<InputField
+			<EditInputField
 				label="New username"
 				id="name"
 				name="name"

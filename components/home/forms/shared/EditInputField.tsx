@@ -1,6 +1,6 @@
 import { InputFieldTypes } from "@/types/FormTypes";
 
-const InputField: React.FC<InputFieldTypes> = ({
+const EditInputField: React.FC<InputFieldTypes> = ({
 	label,
 	id,
 	name,
@@ -9,6 +9,7 @@ const InputField: React.FC<InputFieldTypes> = ({
 	error,
 	register,
 	readOnly,
+	onChange,
 }) => {
 	return (
 		<div className="relative flex flex-col gap-2 mb-8">
@@ -23,6 +24,7 @@ const InputField: React.FC<InputFieldTypes> = ({
 					error ? "border-red-500 border" : ""
 				}`}
 				{...register}
+				onChange={onChange}
 			/>
 			{error && (
 				<p className="absolute text-xs text-red-500 -bottom-6 left-3">
@@ -33,4 +35,4 @@ const InputField: React.FC<InputFieldTypes> = ({
 	);
 };
 
-export default InputField;
+export default EditInputField;

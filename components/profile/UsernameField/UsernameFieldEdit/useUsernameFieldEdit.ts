@@ -1,7 +1,7 @@
 import { UsernameEditFormTypes } from "@/types/FormTypes";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { setNewUsername } from "@/stores/slices/newUsernameSlice";
+import { setNewUsername } from "@/stores";
 
 const useUsernameFieldEdit = () => {
 	const { register, formState, handleSubmit, getValues } =
