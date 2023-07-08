@@ -15,6 +15,7 @@ export type InputFieldTypes = {
 	register?: any;
 	readOnly?: boolean | string;
 	value?: string;
+	onChange?: any;
 };
 
 export type RegistrationFormTypes = {

@@ -1,5 +1,7 @@
 import { UsernameEditFormTypes } from "@/types/FormTypes";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { setNewUsername } from "@/stores/slices/newUsernameSlice";
 
 const useUsernameFieldEdit = () => {
 	const { register, formState, handleSubmit, getValues } =
@@ -8,6 +10,13 @@ const useUsernameFieldEdit = () => {
 		});
 
 	const { errors } = formState;
+	const dispatch = useDispatch();
+
+	const handleNewUsernameChange = (
+		event: React.ChangeEvent<HTMLInputElement>
+	) => {
+		dispatch(setNewUsername(event.target.value));
+	};
 
 	return {
 		register,
@@ -15,6 +24,8 @@ const useUsernameFieldEdit = () => {
 		handleSubmit,
 		getValues,
 		errors,
+		dispatch,
+		handleNewUsernameChange,
 	};
 };
 

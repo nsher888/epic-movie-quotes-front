@@ -2,7 +2,8 @@ import { InputField } from "@/components";
 import useUsernameFieldEdit from "./useUsernameFieldEdit";
 
 const UsernameFieldEdit = () => {
-	const { register, errors } = useUsernameFieldEdit();
+	const { register, errors, handleNewUsernameChange } =
+		useUsernameFieldEdit();
 
 	return (
 		<div className="max-w-[546px] ">
@@ -29,6 +30,7 @@ const UsernameFieldEdit = () => {
 							"Please use only lowercase Latin letters and numbers.",
 					},
 				})}
+				onChange={handleNewUsernameChange}
 			/>
 		</div>
 	);

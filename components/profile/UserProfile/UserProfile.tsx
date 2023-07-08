@@ -5,21 +5,27 @@ import {
 	UserAvatar,
 	UsernameField,
 } from "@/components";
+import { UserContext } from "@/context";
+import { useState } from "react";
 
 const UserProfile = () => {
-	return (
-		<div className="mb-[1000px] flex flex-col">
-			<div className="bg-[#11101A] min-h-[700px] mb-16  min-w-[1000px] mt-32  flex flex-col items-center  shadow-lg pl-48 pr-52">
-				<UserAvatar />
-				<UsernameField />
-				<EmailField />
-				<PasswordField />
-			</div>
+	const [isEditing, setIsEditing] = useState(false);
 
-			<div className="self-end ">
-				<ProfileButtons />
+	return (
+		<UserContext.Provider value={{ isEditing, setIsEditing }}>
+			<div className="mb-[1000px] flex flex-col">
+				<div className="bg-[#11101A] min-h-[700px] mb-16  min-w-[1000px] mt-32  flex flex-col items-center  shadow-lg pl-48 pr-52">
+					<UserAvatar />
+					<UsernameField />
+					<EmailField />
+					<PasswordField />
+				</div>
+
+				<div className="self-end ">
+					<ProfileButtons />
+				</div>
 			</div>
-		</div>
+		</UserContext.Provider>
 	);
 };
 

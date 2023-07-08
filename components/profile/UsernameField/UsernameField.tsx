@@ -1,6 +1,5 @@
-import { InputField } from "@/components";
+import { InputField, UsernameFieldEdit } from "@/components";
 import useUsernameField from "./useUsernameField";
-import UsernameFieldEdit from "./UsernameFieldEdit/UsernameFIeldEdit";
 
 const UsernameField = () => {
 	const { user, handleEditClick, isEditing } = useUsernameField();
