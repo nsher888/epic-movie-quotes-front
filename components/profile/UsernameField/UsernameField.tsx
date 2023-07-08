@@ -1,19 +1,26 @@
 import { InputField } from "@/components";
 import useUsernameField from "./useUsernameField";
+import UsernameFieldEdit from "./UsernameFieldEdit/UsernameFIeldEdit";
 
 const UsernameField = () => {
-	const { user } = useUsernameField();
+	const { user, handleEditClick, isEditing } = useUsernameField();
 
 	return (
-		<div className="flex w-full gap-5 mt-10">
-			<div className="w-full">
-				<InputField
-					label="Username"
-					placeholder={user.name}
-					readOnly="true"
-				/>
+		<div className="flex flex-col w-full">
+			<div className="flex w-full gap-5 mt-10 ">
+				<div className="w-full">
+					<InputField
+						label="Username"
+						placeholder={user.name}
+						readOnly="true"
+					/>
+				</div>
+				<button onClick={handleEditClick} className="text-xl ">
+					Edit
+				</button>
 			</div>
-			<button className="text-xl ">Edit</button>
+
+			{isEditing && <UsernameFieldEdit />}
 		</div>
 	);
 };
