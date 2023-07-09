@@ -6,12 +6,17 @@ import {
 	UsernameField,
 } from "@/components";
 import { UserContext } from "@/context";
-import { useState } from "react";
+import useUserProfile from "./useUserProfile";
 
 const UserProfile = () => {
-	const [isEditing, setIsEditing] = useState(false);
-	const [isPasswordEditing, setIsPasswordEditing] = useState(false);
-	const [isEmailEditing, setIsEmailEditing] = useState(false);
+	const {
+		isEditing,
+		setIsEditing,
+		isPasswordEditing,
+		setIsPasswordEditing,
+		isEmailEditing,
+		setIsEmailEditing,
+	} = useUserProfile();
 
 	return (
 		<UserContext.Provider
@@ -31,9 +36,11 @@ const UserProfile = () => {
 					<PasswordField />
 				</div>
 
-				<div className="self-end ">
-					<ProfileButtons />
-				</div>
+				{isEditing || isPasswordEditing || isEmailEditing ? (
+					<div className="self-end">
+						<ProfileButtons />
+					</div>
+				) : null}
 			</div>
 		</UserContext.Provider>
 	);

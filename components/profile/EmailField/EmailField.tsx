@@ -1,6 +1,5 @@
-import { InputField } from "@/components";
+import { InputField, EmailFieldEdit } from "@/components";
 import useEmailField from "./useEmailField";
-import EmailFieldEdit from "./EmailFieldEdit/EmailFieldEdit";
 
 const EmailField = () => {
 	const { user, handleEditClick, isEmailEditing } = useEmailField();
