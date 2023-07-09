@@ -11,6 +11,7 @@ import { useState } from "react";
 const UserProfile = () => {
 	const [isEditing, setIsEditing] = useState(false);
 	const [isPasswordEditing, setIsPasswordEditing] = useState(false);
+	const [isEmailEditing, setIsEmailEditing] = useState(false);
 
 	return (
 		<UserContext.Provider
@@ -19,6 +20,8 @@ const UserProfile = () => {
 				setIsEditing,
 				isPasswordEditing,
 				setIsPasswordEditing,
+				isEmailEditing,
+				setIsEmailEditing,
 			}}>
 			<div className="mb-[1000px]  flex flex-col">
 				<div className="bg-[#11101A] mb-16 pb-36 min-w-[1000px] mt-32  flex flex-col items-center  shadow-lg pl-48 pr-52">

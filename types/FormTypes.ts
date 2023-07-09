@@ -49,3 +49,7 @@ export type PasswordEditFormTypes = {
 	password: string;
 	confirm_password: string;
 };
+
+export type EmailEditFormTypes = {
+	email: string;
+};
