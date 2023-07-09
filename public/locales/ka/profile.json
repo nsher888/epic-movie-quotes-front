@@ -1,0 +1,17 @@
+{
+	"myProfile": "ჩემი პროფილი",
+	"UploadNewAvatar": "ახალი ავატარის ატვირთვა",
+	"edit": "შეცვლა",
+	"cancel": "გაუქმება",
+	"saveChanges": "ცვლილებების შენახვა",
+	"username": "სახელი",
+	"email": "იმეილი",
+	"password": "პაროლი",
+	"newUsername": "ახალი სახელი",
+	"newEmail": "ახალი მეილი",
+	"newPassword": "ახალი პაროლი",
+	"confirmPassword": "გაიმეორე ახალი პაროლი",
+	"passwordShouldContain": "პაროლი უნდა შეიცავდეს",
+	"passwordRuleOne": "8 ან მეტი სიმბოლო",
+	"passwordRuleTwo": "15 დაბალი რეგისტრის სიმბოლო"
+}

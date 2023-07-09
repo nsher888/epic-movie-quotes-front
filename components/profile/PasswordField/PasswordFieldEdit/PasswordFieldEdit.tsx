@@ -9,11 +9,12 @@ const PasswordFieldEdit = () => {
 		handleNewPasswordChange,
 		isLengthValid,
 		isLowercaseValid,
+		t,
 	} = usePasswordFieldEdit();
 	return (
-		<div className="max-w-[546px]">
+		<div className="max-w-[505px]">
 			<div className="p-6 mb-8 border border-gray-500 rounded">
-				<p>Password Should Contain</p>
+				<p>{t("passwordShouldContain")}</p>
 				<div className="flex items-center gap-2 mt-4 mb-1 text-sm">
 					<PasswordIcon
 						color={isLengthValid ? "#198754" : "#9C9A9A"}
@@ -22,7 +23,7 @@ const PasswordFieldEdit = () => {
 						className={
 							isLengthValid ? "text-white" : "text-neutral-400"
 						}>
-						8 or more characters
+						{t("passwordRuleOne")}
 					</p>
 				</div>
 				<div className="flex items-center gap-2 text-sm">
@@ -33,12 +34,12 @@ const PasswordFieldEdit = () => {
 						className={
 							isLowercaseValid ? "text-white" : "text-neutral-400"
 						}>
-						15 lowercase characters
+						{t("passwordRuleTwo")}
 					</p>
 				</div>
 			</div>
 			<EditInputField
-				label="New password"
+				label={t("newPassword")}
 				id="password"
 				name="password"
 				type="password"
@@ -63,7 +64,7 @@ const PasswordFieldEdit = () => {
 				onChange={handleNewPasswordChange}
 			/>
 			<InputField
-				label="Confirm new password"
+				label={t("confirmPassword")}
 				id="confirm_password"
 				name="confirm_password"
 				type="password"

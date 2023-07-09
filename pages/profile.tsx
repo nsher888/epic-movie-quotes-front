@@ -1,7 +1,9 @@
 import { NavBar, SideBar, UserProfile } from "@/components";
+import useProfile from "@/hooks/useProfile";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const profile = () => {
+const Profile = () => {
+	const { t } = useProfile();
 	return (
 		<div className="min-h-screen text-white bg-feed-background">
 			<NavBar />
@@ -10,7 +12,7 @@ const profile = () => {
 				<SideBar />
 
 				<div className="pt-8 ">
-					<h1 className="pl-16 text-2xl ">My Profile</h1>
+					<h1 className="pl-16 text-2xl ">{t("myProfile")}</h1>
 					<UserProfile />
 				</div>
 			</div>
@@ -18,12 +20,17 @@ const profile = () => {
 	);
 };
 
-export default profile;
+export default Profile;
 
 export async function getStaticProps({ locale }: any) {
 	return {
 		props: {
-			...(await serverSideTranslations(locale, ["common", "newsfeed"])),
+			...(await serverSideTranslations(locale, [
+				"common",
+				"newsfeed",
+				"profile",
+				"landing",
+			])),
 		},
 	};
 }

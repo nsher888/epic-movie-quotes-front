@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "@/stores";
 import { getUserData, updateAvatar } from "@/services";
 import { useState } from "react";
+import { useTranslation } from "next-i18next";
 
 const useUserAvatar = () => {
 	const user = useSelector((state: RootState) => state.user.user);
@@ -25,9 +26,12 @@ const useUserAvatar = () => {
 		}
 	};
 
+	const { t } = useTranslation("profile");
+
 	return {
 		user,
 		handleFileChangeAndUpload,
+		t,
 	};
 };
 

@@ -2,20 +2,20 @@ import { InputField, UsernameFieldEdit } from "@/components";
 import useUsernameField from "./useUsernameField";
 
 const UsernameField = () => {
-	const { user, handleEditClick, isEditing } = useUsernameField();
+	const { user, handleEditClick, isEditing, t } = useUsernameField();
 
 	return (
 		<div className="flex flex-col w-full">
 			<div className="flex w-full gap-5 mt-10 ">
 				<div className="w-full">
 					<InputField
-						label="Username"
+						label={t("username")}
 						placeholder={user.name}
 						readOnly="true"
 					/>
 				</div>
 				<button onClick={handleEditClick} className="text-xl ">
-					Edit
+					{t("edit")}
 				</button>
 			</div>
 

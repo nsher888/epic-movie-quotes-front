@@ -2,6 +2,7 @@ import { setNewEmail } from "@/stores";
 import { EmailEditFormTypes } from "@/types/FormTypes";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "next-i18next";
 
 const useUsernameFieldEdit = () => {
 	const { register, formState, handleSubmit, getValues } =
@@ -18,6 +19,8 @@ const useUsernameFieldEdit = () => {
 		dispatch(setNewEmail(event.target.value));
 	};
 
+	const { t } = useTranslation("profile");
+
 	return {
 		register,
 		formState,
@@ -26,6 +29,7 @@ const useUsernameFieldEdit = () => {
 		errors,
 		dispatch,
 		handleNewEmailChange,
+		t,
 	};
 };
 

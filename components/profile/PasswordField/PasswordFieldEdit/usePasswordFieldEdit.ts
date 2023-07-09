@@ -2,6 +2,7 @@ import { setNewPassword } from "@/stores";
 import { PasswordEditFormTypes } from "@/types/FormTypes";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "next-i18next";
 
 const usePasswordFieldEdit = () => {
 	const { register, formState, getValues, watch } =
@@ -29,6 +30,8 @@ const usePasswordFieldEdit = () => {
 		);
 	};
 
+	const { t } = useTranslation("profile");
+
 	return {
 		register,
 		getValues,
@@ -36,6 +39,7 @@ const usePasswordFieldEdit = () => {
 		handleNewPasswordChange,
 		isLengthValid,
 		isLowercaseValid,
+		t,
 	};
 };
 

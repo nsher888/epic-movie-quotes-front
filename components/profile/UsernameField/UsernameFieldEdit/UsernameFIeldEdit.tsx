@@ -2,13 +2,13 @@ import { EditInputField } from "@/components";
 import useUsernameFieldEdit from "./useUsernameFieldEdit";
 
 const UsernameFieldEdit = () => {
-	const { register, errors, handleNewUsernameChange } =
+	const { register, errors, handleNewUsernameChange, t } =
 		useUsernameFieldEdit();
 
 	return (
-		<div className="max-w-[546px]">
+		<div className="max-w-[505px]">
 			<EditInputField
-				label="New username"
+				label={t("newUsername")}
 				id="name"
 				name="name"
 				type="text"

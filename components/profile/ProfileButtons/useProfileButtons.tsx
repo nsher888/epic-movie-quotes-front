@@ -11,6 +11,7 @@ import { useContext } from "react";
 import { UserContext } from "@/context";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
+import { useTranslation } from "next-i18next";
 
 const useProfileButtons = () => {
 	const dispatch = useDispatch();
@@ -51,9 +52,12 @@ const useProfileButtons = () => {
 		}
 	};
 
+	const { t } = useTranslation("profile");
+
 	return {
 		handleCancelChanges,
 		handleSaveChanges,
+		t,
 	};
 };
 

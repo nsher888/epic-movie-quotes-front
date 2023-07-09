@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const useUserProfile = () => {
 	const [isEditing, setIsEditing] = useState(false);
