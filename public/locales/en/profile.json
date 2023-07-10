@@ -10,6 +10,7 @@
 	"newUsername": "New Username",
 	"newEmail": "New Email",
 	"newPassword": "New Password",
+	"confirmPassword": "Confirm Password",
 	"passwordShouldContain": "Password should contain",
 	"passwordRuleOne": "8 or more characters",
 	"passwordRuleTwo": "15 lowercase characters"

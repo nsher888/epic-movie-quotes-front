@@ -12,7 +12,7 @@ const PasswordFieldEdit = () => {
 		t,
 	} = usePasswordFieldEdit();
 	return (
-		<div className="max-w-[505px]">
+		<div className="max-w-[31.6rem]">
 			<div className="p-6 mb-8 border border-gray-500 rounded">
 				<p>{t("passwordShouldContain")}</p>
 				<div className="flex items-center gap-2 mt-4 mb-1 text-sm">

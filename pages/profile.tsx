@@ -1,5 +1,5 @@
 import { NavBar, SideBar, UserProfile } from "@/components";
-import useProfile from "@/hooks/useProfile";
+import { useProfile } from "@/hooks";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Profile = () => {

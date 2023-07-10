@@ -28,8 +28,8 @@ const UserProfile = () => {
 				isEmailEditing,
 				setIsEmailEditing,
 			}}>
-			<div className="mb-[1000px]  flex flex-col">
-				<div className="bg-[#11101A] mb-16 pb-36 min-w-[1000px] mt-32  flex flex-col items-center  shadow-lg pl-48 pr-52">
+			<div className="mb-[62rem]  flex flex-col">
+				<div className="bg-[#11101A] mb-16 pb-36 min-w-[62rem] mt-32  flex flex-col items-center  shadow-lg pl-48 pr-52">
 					<UserAvatar />
 					<UsernameField />
 					<EmailField />

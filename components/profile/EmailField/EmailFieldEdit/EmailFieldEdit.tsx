@@ -4,7 +4,7 @@ import useEmailFieldEdit from "./useEmailFieldEdit";
 const EmailFieldEdit = () => {
 	const { register, errors, handleNewEmailChange, t } = useEmailFieldEdit();
 	return (
-		<div className="max-w-[505px]">
+		<div className="max-w-[31.6rem]">
 			<EditInputField
 				label={t("newEmail")}
 				id="email"
