@@ -1,4 +1,5 @@
-import { FieldError } from "react-hook-form";
+import { ChangeEventHandler } from "react";
+import { FieldError, UseFormRegisterReturn } from "react-hook-form";
 
 export type LoginFormTypes = {
 	email: string;
@@ -12,10 +13,10 @@ export type InputFieldTypes = {
 	type?: string;
 	placeholder?: string;
 	error?: FieldError;
-	register?: any;
+	register?: UseFormRegisterReturn;
 	readOnly?: boolean | string;
 	value?: string;
-	onChange?: any;
+	onChange?: ChangeEventHandler<HTMLInputElement>;
 };
 
 export type RegistrationFormTypes = {
