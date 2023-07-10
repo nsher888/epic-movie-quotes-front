@@ -1,6 +1,5 @@
-import { getCSRFToken } from "@/services/session/getCSRFToken";
-import { forgotPassword } from "@/services/session/passwordReset";
-import { showModal } from "@/stores/slices/modalSlice";
+import { getCSRFToken, forgotPassword } from "@/services";
+import { showModal } from "@/stores";
 import { ForgotPasswordFormTypes } from "@/types/FormTypes";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "next-i18next";

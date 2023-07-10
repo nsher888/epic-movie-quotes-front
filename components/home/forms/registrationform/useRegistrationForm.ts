@@ -1,9 +1,8 @@
 import { RegistrationFormTypes } from "@/types/FormTypes";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { showModal } from "@/stores/slices/modalSlice";
-import { registerUser } from "@/services/session/registerUser";
-import { getCSRFToken } from "@/services/session/getCSRFToken";
+import { showModal } from "@/stores";
+import { registerUser, getCSRFToken } from "@/services";
 import { useTranslation } from "next-i18next";
 
 const useRegistrationForm = () => {

@@ -1,4 +1,4 @@
-import { showModal, hideModal } from "@/stores/slices/modalSlice";
+import { showModal } from "@/stores";
 import { useDispatch } from "react-redux";
 
 export const useModalActions = () => {

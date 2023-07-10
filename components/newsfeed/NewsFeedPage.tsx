@@ -1,9 +1,10 @@
-// import NavBar from "./NavBar/NavBar";
+import { SideBar, NavBar } from "@/components";
 
 const NewsFeedPage = () => {
 	return (
 		<div className="min-h-screen bg-feed-background">
-			{/* <NavBar /> */}
+			<NavBar />
+			<SideBar />
 		</div>
 	);
 };

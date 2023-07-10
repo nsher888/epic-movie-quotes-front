@@ -1,0 +1,17 @@
+{
+	"myProfile": "My Profile",
+	"UploadNewAvatar": "Upload New Avatar",
+	"edit": "Edit",
+	"cancel": "Cancel",
+	"saveChanges": "Save Changes",
+	"username": "Username",
+	"email": "Email",
+	"password": "Password",
+	"newUsername": "New Username",
+	"newEmail": "New Email",
+	"newPassword": "New Password",
+	"confirmPassword": "Confirm Password",
+	"passwordShouldContain": "Password should contain",
+	"passwordRuleOne": "8 or more characters",
+	"passwordRuleTwo": "15 lowercase characters"
+}
