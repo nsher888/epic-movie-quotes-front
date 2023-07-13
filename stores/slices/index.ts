@@ -3,3 +3,4 @@ export { showModal, hideModal } from "./modalSlice";
 export { setNewUsername } from "./newUsernameSlice";
 export { setNewPassword } from "./newPasswordSlice";
 export { setNewEmail } from "./newEmailSlice";
+export { showcrudModal, hidecrudModal } from "./crudModalSlice";

@@ -1,0 +1,20 @@
+import instance from "../axios";
+
+export const getUserMovies = async () => {
+	const reponse = await instance.get("api/user/movies");
+	return reponse;
+};
+
+export const getUserMovie = async (id: any) => {
+	const reponse = await instance.get(`api/user/movies/${id}`);
+	return reponse;
+};
+
+export const storeUserMovie = async (data: any) => {
+	const response = await instance.post("api/user/movies", data, {
+		headers: {
+			"Content-Type": "multipart/form-data",
+		},
+	});
+	return response;
+};

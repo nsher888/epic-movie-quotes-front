@@ -5,7 +5,7 @@ import useSideBar from "./useSideBar";
 const SideBar = () => {
 	const { isNewsfeedPage, isListPage, isProfilePage, t, user } = useSideBar();
 	return (
-		<ul className="pt-8 pl-20 text-white mr-44">
+		<ul className="pt-8 pl-20 text-white mr-44 shrink-0">
 			<li className="flex mb-10">
 				<picture>
 					<img

@@ -5,3 +5,4 @@ export { default as DownArrow } from "./DownArrow";
 export { default as HouseIcon } from "./HouseIcon";
 export { default as CameraIcon } from "./CameraIcon";
 export { default as PasswordIcon } from "./PasswordIcon";
+export { default as addMovieIcon } from "./addMovieIcon";
