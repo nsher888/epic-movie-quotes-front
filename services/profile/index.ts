@@ -3,3 +3,8 @@ export { updateUsername } from "./updateUsername";
 export { updatePassword } from "./updatePassword";
 export { updateEmail } from "./updateEmail";
 export { updateAvatar } from "./updateAvatar";
+export { getUserMovies } from "./getUserMovies";
+export { getUserMovie } from "./getUserMovies";
+export { storeUserMovie } from "./getUserMovies";
+export { deleteUserMovie } from "./getUserMovies";
+export { updateUserMovie } from "./getUserMovies";

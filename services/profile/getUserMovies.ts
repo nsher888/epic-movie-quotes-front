@@ -23,3 +23,8 @@ export const deleteUserMovie = async (id: any) => {
 	const response = await instance.delete(`api/user/movies/${id}`);
 	return response;
 };
+
+export const updateUserMovie = async (data: any) => {
+	const response = await instance.put(`api/user/movies/${data.id}`, data);
+	return response;
+};

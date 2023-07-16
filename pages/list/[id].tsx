@@ -1,5 +1,10 @@
-import { CrudModal, NavBar, SideBar } from "@/components";
-import MovieItem from "@/components/list/MovieItem/MovieItem";
+import {
+	CrudModal,
+	NavBar,
+	SideBar,
+	EditMovieForm,
+	MovieItem,
+} from "@/components";
 import { RootState } from "@/stores/store";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useSelector } from "react-redux";
@@ -20,7 +25,9 @@ const MovieDescription = () => {
 				</div>
 			</div>
 
-			<CrudModal isVisible={isModalVisible}></CrudModal>
+			<CrudModal isVisible={isModalVisible}>
+				{activeForm === "editMovie" && <EditMovieForm />}
+			</CrudModal>
 		</>
 	);
 };

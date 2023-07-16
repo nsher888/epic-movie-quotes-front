@@ -1,5 +1,10 @@
-import { AddMovieForm, ListPage, NavBar, SideBar } from "@/components";
-import { CrudModal } from "@/components/list/CrudModal";
+import {
+	AddMovieForm,
+	ListPage,
+	NavBar,
+	SideBar,
+	CrudModal,
+} from "@/components";
 import { RootState } from "@/stores/store";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useSelector } from "react-redux";

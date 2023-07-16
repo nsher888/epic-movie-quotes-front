@@ -1,32 +1,18 @@
 import { ListHeader } from "@/components";
-import { getUserMovies } from "@/services/profile/getUserMovies";
-import { useQuery } from "@tanstack/react-query";
-import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import useListPage from "./useListPage";
 
 const ListPage = () => {
-	const { isLoading, isError, data, error } = useQuery({
-		queryKey: ["movies", "id"],
-		queryFn: getUserMovies,
-	});
-	const router = useRouter();
-	const locale = router.locale as "en" | "ka";
+	const { locale, isLoading, movie } = useListPage();
 
 	if (isLoading) {
 		return <div>Loading...</div>;
 	}
 
-	const movie = data?.data.movies;
-
-	console.log(movie);
-
 	return (
 		<div className="w-full pt-8">
 			<div className="flex items-center justify-between">
-				<h1 className="pl-16 text-2xl ">
-					My list of movies (total: {movie.length})
-				</h1>
+				<h1 className="pl-16 text-2xl "></h1>
 				<ListHeader />
 			</div>
 			<div className="grid grid-cols-1 mt-16 gap-x-8 gap-y-20 md:grid-cols-3">
@@ -35,8 +21,7 @@ const ListPage = () => {
 						<img
 							src={movie.image}
 							alt="Movie Image"
-							sizes="min-height: 371px"
-							className="object-cover h-full mb-4 rounded-xl"
+							className="object-cover w-full h-full max-h-[23rem] mb-4 rounded-xl"
 						/>
 						<p className="text-2xl ">
 							<Link href={`/list/${movie.id}`}>

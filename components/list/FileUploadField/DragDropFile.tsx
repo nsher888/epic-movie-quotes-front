@@ -1,49 +1,16 @@
-import React, { useRef, useState } from "react";
+import useDragDropFile from "./useDragDropFile";
 
 const DragDropFile = ({ register }: { register: any }) => {
-	const [dragActive, setDragActive] = useState(false);
-
-	const inputRef = useRef<HTMLInputElement>(null);
-
-	const handleDragEnter = (e: React.DragEvent<HTMLDivElement>) => {
-		e.preventDefault();
-		e.stopPropagation();
-		setDragActive(true);
-	};
-
-	const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
-		e.preventDefault();
-		e.stopPropagation();
-		setDragActive(false);
-	};
-
-	const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-		e.preventDefault();
-		e.stopPropagation();
-	};
-
-	const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
-		event.preventDefault();
-		event.stopPropagation();
-		setDragActive(false);
-		if (event.dataTransfer.files && event.dataTransfer.files[0]) {
-			console.log(event.dataTransfer.files[0]);
-		}
-	};
-
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		e.preventDefault();
-		if (e.target.files && e.target.files[0]) {
-			console.log(e.target.files[0]);
-		}
-	};
-
-	const onButtonClick = () => {
-		if (inputRef.current) {
-			inputRef.current.click();
-		}
-	};
-
+	const {
+		dragActive,
+		inputRef,
+		handleDragEnter,
+		handleDragLeave,
+		handleDragOver,
+		handleDrop,
+		handleChange,
+		onButtonClick,
+	} = useDragDropFile();
 	return (
 		<div
 			id="drag-file-container"

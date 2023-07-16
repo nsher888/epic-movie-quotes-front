@@ -1,8 +1,9 @@
 import { Button, DragDropFile } from "@/components";
-import useAddMovieForm from "./useAddMovieForm";
+import useEditMovieForm from "./useEditMovieForm";
 
-const AddMovieForm = () => {
-	const { handleSubmit, register, onSubmit } = useAddMovieForm();
+const EditMovieForm = () => {
+	const { register, handleSubmit, setValue, movie, onSubmit } =
+		useEditMovieForm();
 
 	return (
 		<div className="w-full">
@@ -95,11 +96,11 @@ const AddMovieForm = () => {
 				<DragDropFile register={register("image")} />
 
 				<Button className="bg-red-600" type="submit">
-					Add Movie
+					Edit Movie
 				</Button>
 			</form>
 		</div>
 	);
 };
 
-export default AddMovieForm;
+export default EditMovieForm;

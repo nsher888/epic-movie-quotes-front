@@ -2,8 +2,10 @@ import {
 	deleteUserMovie,
 	getUserMovie,
 } from "@/services/profile/getUserMovies";
+import { showcrudModal } from "@/stores";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
 
 const useMovieItem = () => {
 	const router = useRouter();
@@ -14,6 +16,7 @@ const useMovieItem = () => {
 	});
 	const locale = router.locale as "en" | "ka";
 	const { push } = useRouter();
+	const dispatch = useDispatch();
 
 	const movie = data?.data.movie;
 	const QueryClient = useQueryClient();
@@ -33,6 +36,10 @@ const useMovieItem = () => {
 		deleteMovieMutation.mutate(id);
 	};
 
+	const handleEdit = () => {
+		dispatch(showcrudModal("editMovie"));
+	};
+
 	return {
 		handleDelete,
 		isLoading,
@@ -41,6 +48,7 @@ const useMovieItem = () => {
 		error,
 		locale,
 		movie,
+		handleEdit,
 	};
 };
 

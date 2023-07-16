@@ -1,11 +1,9 @@
-import { DeleteMovieIcon, EditMovieIcon } from "@/components/icons";
-import { getUserMovie } from "@/services/profile/getUserMovies";
-import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/router";
+import { DeleteMovieIcon, EditMovieIcon } from "@/components";
 import useMovieItem from "./useMovieItem";
 
 const MovieItem = () => {
-	const { handleDelete, isLoading, movie, locale } = useMovieItem();
+	const { handleDelete, isLoading, movie, locale, handleEdit } =
+		useMovieItem();
 
 	if (isLoading) {
 		return <div>Loading...</div>;
@@ -18,15 +16,15 @@ const MovieItem = () => {
 			<div className="flex gap-5 mt-8">
 				<img
 					src={movie.image}
-					className="w-[800px] h-[441px] object-cover rounded-xl"
+					className="w-[50rem] h-[27rem] object-cover rounded-xl"
 				/>
 				<div className="">
-					<div className="flex justify-between">
+					<div className="flex items-center justify-between gap-4">
 						<h1 className="mb-6 text-2xl text-orange-200">
 							{`${movie.title[locale]} (${movie.year})`}
 						</h1>
 						<div className="flex self-start rounded-xl items-center justify-between gap-4 px-6 py-3 bg-[#24222F]">
-							<EditMovieIcon />
+							<EditMovieIcon onClick={handleEdit} />
 							<span className="w-[1px] h-4 bg-gray-300"></span>
 							<DeleteMovieIcon onClick={handleDelete} />
 						</div>

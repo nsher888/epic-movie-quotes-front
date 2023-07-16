@@ -1,5 +1,4 @@
-import { Button, addMovieIcon } from "@/components";
-import React from "react";
+import { Button } from "@/components";
 import useListHeader from "./useListHeader";
 
 const ListHeader = () => {
