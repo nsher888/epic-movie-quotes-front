@@ -32,11 +32,9 @@ const ListPage = () => {
 			<div className="grid grid-cols-1 mt-16 gap-x-8 gap-y-20 md:grid-cols-3">
 				{movie?.map((movie: any) => (
 					<div key={movie.id}>
-						<Image
-							src="/assets/images/image3.png"
+						<img
+							src={movie.image}
 							alt="Movie Image"
-							width={440}
-							height={371}
 							sizes="min-height: 371px"
 							className="object-cover h-full mb-4 rounded-xl"
 						/>

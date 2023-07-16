@@ -2,6 +2,9 @@ import { Button, CustomSelectBox } from "@/components";
 import { useForm } from "react-hook-form";
 import DragDropFile from "../FileUploadField/DragDropFile";
 import { storeUserMovie } from "@/services/profile/getUserMovies";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useDispatch } from "react-redux";
+import { hidecrudModal } from "@/stores";
 
 const AddMovieForm = () => {
 	const genres = [
@@ -16,11 +19,23 @@ const AddMovieForm = () => {
 	];
 
 	const { register, handleSubmit } = useForm();
+	const dispatch = useDispatch();
+
+	const queryClient = useQueryClient();
+	const createMovieMutation = useMutation({
+		mutationFn: storeUserMovie,
+		onSuccess: () => {
+			queryClient.invalidateQueries({
+				queryKey: ["movies"],
+			});
+			dispatch(hidecrudModal());
+		},
+	});
 
 	const onSubmit = async (data: any) => {
 		try {
-			console.log(data);
-			await storeUserMovie(data);
+			data.image = data.image[0];
+			await createMovieMutation.mutateAsync(data);
 		} catch (error) {
 			console.log(error);
 		}

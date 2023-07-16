@@ -18,3 +18,8 @@ export const storeUserMovie = async (data: any) => {
 	});
 	return response;
 };
+
+export const deleteUserMovie = async (id: any) => {
+	const response = await instance.delete(`api/user/movies/${id}`);
+	return response;
+};
