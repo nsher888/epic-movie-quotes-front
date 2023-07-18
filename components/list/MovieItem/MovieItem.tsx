@@ -23,9 +23,13 @@ const MovieItem = () => {
               {`${movie.title[locale]} (${movie.year})`}
             </h1>
             <div className='flex self-start rounded-xl items-center justify-between gap-4 px-6 py-3 bg-[#24222F]'>
-              <EditMovieIcon onClick={handleEdit} />
+              <div onClick={handleEdit}>
+                <EditMovieIcon />
+              </div>
               <span className='w-[1px] h-4 bg-gray-300'></span>
-              <DeleteMovieIcon onClick={handleDelete} />
+              <div onClick={handleDelete}>
+                <DeleteMovieIcon />
+              </div>
             </div>
           </div>
 
