@@ -1,6 +1,6 @@
-import instance from "../axios";
+import instance from '../axios';
 
 export const getUserData = async () => {
-	const response = await instance.get("api/user");
-	return response;
+  const response = await instance.get('api/user');
+  return response;
 };
